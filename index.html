@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ragany Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+
+						<h1><a href="index.html">Ragany Portfolio</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about%20me.html">About Me</a></li>
+											<li><a href="projects.html">Projects</a></li>
+											<li><a href="relevant%20courses.html">Relevant Courses</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>Ragany Portfolio</h2>
+							<p> 👋 Welcome to my portfolio!
+								<br> My name is Isabelle Ragany!
+								<br>
+								<br> I am a Biomedical and Electrical Engineering
+								<br> student in my fourth year of studies.
+							</p>
+						</div>
+						<a href="#project" class="more scrolly">View Recent Projects</a>
+					</section>
+
+
+				<!-- Project -->
+					<section id="project" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major" style="text-align:center">
+								<h2>Here are some of my latest projects</h2>
+								<p style="color:white">I’m interested in medical robotics, AI, software
+									<br> development and learning new things!</p>
+							</header>
+
+							<ul class="actions special">
+								<li><a href="projects.html" class="button primary">View All Projects</a></li>
+							</ul>
+
+
+<!--								Cost-effective LIDAR Device-->
+							<div class="popup" data-popup="LIDAR-popup">
+								<div class="popup-inner">
+									<h2 style="color:black">COST-EFFECTIVE LIDAR DEVICE</h2>
+								   <div class="popup-scroll">
+										<h5 style="color:black">Technologies: TI MSP-EXP432E401Y microcontroller, VL53L1X time of flight (ToF) sensor, Python, C, Keil, stepper motor</h5>
+										<h4 style="color:black">Description</h4>
+										<p>The device uses a TI MSP-EXP432E401Y microcontroller and a VL53L1X time of flight (ToF) sensor to create a 3D spatial mapping of its surroundings indoors. <span class="image left"><img src="images/LIDAR/LIDAR.jpg" alt="LIDAR device Setup Image with User's PC"/></span> The distance measurements are communicated from the ToF sensor to the microcontroller via I2C communication. Next, the measurements are sent to the user's PC via UART communication.</p>
+										<h4 style="color:black">How it works</h4>
+										<p>The device operates using four main stages: signal processing, communication stage, data processing and data visualization.</p>
+										<p>The user starts the Python program and C code program in Keil. The stepper motor will rotate the ToF sensor in specified increments to collect data for a 360-degree scan. The user will then move the device forward a specific distance along the hall and click 'continue' on the Python program. These steps are repeated until sufficient scans are taken. A point cloud and visualization are then shown of the scanned room. </p>
+										<p>An example of the point cloud and the 3D scan of a hallway are shown below.</p>
+										<span class="image"><img src="images/LIDAR/LIDAR_dot_scan.jpg" width="70%" alt="Sample Outputs from the LIDAR Device"/></span>
+								   </div>
+									<p style="color:black"><a data-popup-close="LIDAR-popup" href="#">Close</a></p>
+									<a class="popup-close" data-popup-close="LIDAR-popup" href="#">x</a>
+								</div>
+							</div>
+
+<!--								Deep learning and chemistry-->
+							<div class="popup" data-popup="chem-popup">
+								<div class="popup-inner">
+									<h2 style="color:black">DEEP LEARNING AND CHEMISTRY</h2>
+									<div class="popup-scroll">
+										<h3 style="color:black">Denatured</h3>
+										<h5 style="color:black">Technologies: Python, GitHub, Google Colab, TensorFlow, Keras</h5>
+										<h4 style="color:black">Description</h4>
+										<p>This project was designed for the MacHacks2022 Hackathon in collaboration with two other students. Our team placed 1st in the competition. Check out the full project <a href="https://devpost.com/software/denatured">here</a>.</p>
+										<p>Our project takes the reactants and products of a chemical reaction in the form of SMILES and translates them into a machine-readable format. This is done by tokenizing individual molecules for relevant chemical features. The tokenization is inspired by byte-pair-encoding that is utilized in NLP. It is able to recognize recurring subunits across databases that may be of importance. These tokens are then assigned unique IDs using a dictionary so that they can be input into our model. Each reaction is input as a series of tokens. We used a Long short-term memory (LSTM) artificial recurrent neural network (RNN) to train our classifier. The model classifies reactions based on the class of the enzyme (<a href="https://en.wikipedia.org/wiki/Enzyme_Commission_number">Enzyme Commission Number</a>).</p>
+										<iframe width="90%" height="100%" src="https://www.youtube.com/embed/P8nu3Ok3wmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<h4 style="color:black">How it works</h4>
+										<p>We used Google Colab to work in a collaborative coding setting. To translate the given data to meaningful input to our machine, we used SMILES Pair Encoding (<a href="https://github.com/XinhaoLi74/SmilesPE">SMILES PE</a>). SMILES PE learns the vocabulary of SMILES substrings from the ChEMBL dataset and uses the vocabulary to tokenize the values. We then created our own library of tokens and assigned unique IDs to each token. The IDs/tokens present in each reaction were then input into our model. The model was trained using an LSTM RNN. A model was used to predict the class of the enzyme (the first EC number). The training set was then split by the main class of each reaction, and 7 subclass models were trained to predict the subclasses. When evaluating the models, the main model first predicted the class of the reaction; the reaction was then fed into the corresponding submodel to determine the second EC number.</p>
+										<h4 style="color:black">Accomplishments we are proud of</h4>
+										<ul>
+											<li style="color:black;font-size:small">This was everyone on the team's first time making a deep learning (DL) model. It was exciting to see everything come together!</li>
+											<li style="color:black;font-size:small">This was also our team's first time working with NLP and tokenization! Finding a way to preserve key information and features while quantizing the data was something new and of great importance to us.</li>
+											<li style="color:black;font-size:small">Our model was able to classify reactions for the first EC number with an accuracy of 79%! We were surprised and excited about this result!</li>
+											<li style="color:black;font-size:small">For our team, this was one of the first projects that we worked on to bridge the gap between chemistry and computer science. It was interesting to see the intersection between the two fields and the breadth of applications for DL.</li>
+										</ul>
+										<h4 style="color:black">What we learned during this project</h4>
+										<ul>
+											<li style="color:black;font-size:small">We learned about processing language and string inputs to extract useful and quantifiable features.</li>
+											<li style="color:black;font-size:small">We learned how to build and test deep learning models using TensorFlow Keras.</li>
+											<li style="color:black;font-size:small">We learned about different tools and APIs for working with ML, such as Google Colab.</li>
+											<li style="color:black;font-size:small">Using Google Colab, we were able to run our model using an NVIDIA Tesla K80 GPU. This was incredibly useful as, without the GPU, our model would have taken several hours to fit. With the use of Google Colab, we were able to do this in a matter of minutes.</li>
+										</ul>
+									</div>
+									<p style="color:black"><a data-popup-close="chem-popup" href="index.html">Close</a></p>
+									<a class="popup-close" data-popup-close="chem-popup" href="index.html">x</a>
+								</div>
+							</div>
+
+<!--								Rotator cuff tear rehabilitation device-->
+							<div class="popup" data-popup="ROTATOR-popup">
+									<div class="popup-inner">
+										<h2 style="color:black">Rotator Cuff Tear Rehabilitation Device</h2>
+									   	<div class="popup-scroll">
+										 	<h5 style="color:black">Technologies: Two Adafruit BNO055 Absolute Orientation Sensors, ESP32 microcontroller, C language, Arduino IDE, MATLAB, Autodesk Inventor Professional</h5>
+											<h4 style="color:black">Description</h4>
+										   	<p>Working alongside two students, a device that remotely monitors improvements in recovery of rotator cuff injury and/or surgery was created. Our device communicates with a Bluetooth device to provide live feedback.</p>
+											<span class="image"><img src="images/ROTATOR_CUFF/IMU_shoulder_back.jpg" width="70%" alt="IMU sensor on the arm and back are pictured." /></span>
+											<br>
+											<br>
+											<p>First, the clinician can assign a specific exercise for their patient. When the device is started, and an exercise has been selected, the patient receives prompts that let them know if they are safely executing their exercises. In addition, the frequency of incorrect motions will be logged so that the clinician can request additional information if needed. Secondly, there will also be weekly check-ins to look at the ROM of the shoulder to track recovery.</p>
+											<h4 style="color:black">How it works</h4>
+										   	<p>A C program was created to interface with the sensors and collect data to be logged into a text file. The logged data is then processed through MATLAB. Finally, the MATLAB program filters the data collected to produce the range of motion and weekly trend graphs.</p>
+											<h6 style="color:black">Example output on the Bluetooth device to show range of motion measured for arm abduction exercise.</h6>
+											<span class="image"><img src="images/ROTATOR_CUFF/IMU_prompts.jpg" width="100%" alt="Bluetooth Device User Prompts"/></span>
+											<h6 style="color:black">Example output on MATLAB showing the measured range of motion for the shoulder external rotation exercise and abduction exercise.</h6>
+											<span class="image"><img src="images/ROTATOR_CUFF/IMU_filter.jpg" width="90%" alt="MATLAB Data Filtering"/></span>
+										</div>
+										<p style="color:black"><a data-popup-close="ROTATOR-popup" href="#">Close</a></p>
+										<a class="popup-close" data-popup-close="ROTATOR-popup" href="#">x</a>
+									</div>
+								</div>
+
+<!--								CO detection watch-->
+							<div class="popup" data-popup="cowatch-popup">
+									<div class="popup-inner">
+										<h2 style="color:black">CO DETECTION WATCH</h2>
+									   	<div class="popup-scroll">
+											<h5 style="color:black">Technologies: Python, Raspberry Pi, breadboard and components (buzzer, LCD screen, LEDs, gas sensor), Bluetooth</h5>
+											<h4 style="color:black">Description</h4>
+										   	<p>I worked alongside three students to create this project. We created a wearable watch that acts as a preventative device to monitor carbon monoxide levels in the air. Our targetted end-users include workers, such as engineers, paramedics and miners.</p>
+										   	<div class="row gtr-50 gtr-uniform">
+												<div class="col-4"><span class="image fit"><img src="images/CO_DETECT/RASPBERRYPI.jpg" height="10%" alt="Image of Raspberry Pi for CO detection watch"/></span></div>
+												<div class="col-4"><span class="image fit"><img src="images/CO_DETECT/HOUSING.jpeg" height="10%" alt="Image of CAD housing for CO detection watch" /></span></div>
+												<div class="col-4"><span class="image fit"><img src="images/CO_DETECT/WATCH.jpg" height="10%" alt="Image of CO detection watch" /></span></div>
+											</div>
+										   	<br>
+										   	<br>
+										   	<p>I worked on the Python code and breadboard setup. The program I wrote allows for the incoming data from the gas sensor to be translated into sound, light and text messages using peripherals.</p>
+										   	<h4 style="color:black">How it works</h4>
+										   	<p>The Raspberry Pi was used as a "mini-computer" to house the code and provide power to components on the breadboard. The Grove Multichannel Gas Sensor was used to measure gas concentration in parts per million. The incoming data is filtered, and as concentrations of a gas increase, users are notified to alert them of the severity of the situation. A series of conditional statements were used in the code to specify the severity of the unsafe gas levels. A Bluetooth connection was used to send information from the Raspberry Pi to the user's cell phone.</p>
+									   		<iframe width="90%" height="100%" src="https://www.youtube.com/embed/yDLcJ6P2z5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									   	</div>
+										<p style="color:black"><a data-popup-close="cowatch-popup" href="index.html">Close</a></p>
+										<a class="popup-close" data-popup-close="cowatch-popup" href="index.html">x</a>
+									</div>
+								</div>
+
+							<ul class="features">
+								<li>
+									<h4><span class="image lefticon"><img src="images/LIDAR/ICON.png" width="100%" alt="LIDAR device icon" /></span>Cost-Effective LIDAR Device</h4>
+									<p style="color:white">Using a microcontroller, time of flight sensor and stepper motor, a LIDAR device was created to create a 3D spatial mapping of the surrounding indoors.</p>
+									<a class="primary button" data-popup-open="LIDAR-popup" href="#">Learn More</a>
+								</li>
+								<li>
+									<h4><span class="image lefticon"><img src="images/DEEP_LEARNING/ICON.png" width="100%" alt="Machine learning icon" /></span>Deep Learning and Chemistry</h4>
+									<p style="color:white">A classifier was trained to take in the reactants and products of a chemical reaction in the form of SMILES and translates them into a machine-readable format.</p>
+									<a class="primary button" data-popup-open="chem-popup" href="#">Learn More</a>
+								</li>
+								<li>
+									<h4><span class="image lefticon"><img src="images/ROTATOR_CUFF/ICON.png" width="100%" alt="Rotator cuff monitoring device icon" /></span>Rotator Cuff Tear Rehabilitation Device</h4>
+									<p style="color:white">An absolute orientation sensor was used to monitor the motion of the user’s shoulder in order to track improvements in rotator cuff injuries.</p>
+									<a class="primary button" data-popup-open="ROTATOR-popup" href="#">Learn More</a>
+								</li>
+								<li>
+									<h4><span class="image lefticon"><img src="images/CO_DETECT/ICON.png" width="100%" alt="CO detecting watch icon" /></span>CO Detection Watch</h4>
+									<p style="color:white">A gas sensor was used to track the levels of carbon monoxide and notify the user of unsafe levels via light, sound and text messages.</p>
+									<a class="primary button" data-popup-open="cowatch-popup" href="#">Learn More</a>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Learn more about me</h2>
+								<p>Read my mini biography and learn about
+									<br> some of the courses I have taken!</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="about%20me.html" class="button fit">About Me</a></li>
+								<li><a href="relevant%20courses.html" class="button fit">Courses</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="https://github.com/isabelleragany" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/isabelleragany/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Isabelle Ragany</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<div id="particles-js"></div>
+
+		<!-- Scripts -->
+			<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>
