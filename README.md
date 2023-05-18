@@ -2,7 +2,7 @@
 
 ### Description
 
-This website was created to showcase my recent projects and work. It also was created as an introduction to HTML, CSS and HTML. 
+This website was created to showcase my recent projects and work. It also was created as an introduction to CSS and HTML. 
 
 ### Acknowledgements and Credits
 
